@@ -1,0 +1,10 @@
+*.aux
+*.pdf
+*.log
+*.out
+*.bbl
+*.fdb_latexmk
+*.blg
+*.toc
+*.fls
+/trucs\ chiants/*

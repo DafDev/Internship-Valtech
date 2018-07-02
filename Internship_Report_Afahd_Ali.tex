@@ -1,0 +1,145 @@
+\documentclass[a4paper,12pt]{article}
+
+%------------------------------------------------------------
+%					Languages packages
+%------------------------------------------------------------
+\usepackage[utf8]{inputenc} %utilisation de caract�res lati et codage UTF-8
+\usepackage[T1]{fontenc}
+\usepackage{palatino}     % Police utilis�e
+\usepackage[frenchb]{babel} %Dico fran�ais
+
+%-------------------------------------------------------------
+%					Picture packages
+%-------------------------------------------------------------
+
+\usepackage{graphicx} %inclusion d'image avec l'environnement figure
+\usepackage[lofdepth,lotdepth]{subfig}
+\usepackage{here}
+\usepackage{framed}
+\usepackage{color}
+\definecolor{lightgray}{gray}{0.5}
+\definecolor{myblue}{rgb}{0.2,0,0.8} % d�inition perso de couleur dans la norme RGB
+\definecolor{shade}{gray}{0}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{purple}{rgb}{0.77,0,0.55}
+
+
+
+%-------------------------------------------------------------
+%				Mathematics packages
+%-------------------------------------------------------------
+
+\usepackage{amsmath}
+\usepackage{cases} %permet de faire des syst�mes d'�quations
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{moreverb}
+
+
+%------------------------------------------------------------------
+%				 Coding packages
+%------------------------------------------------------------------
+\usepackage{textcomp}
+\usepackage{listings}
+\lstset{ 
+language=Matlab,        % choix du langage
+tabsize=2,											%taile des tabulations
+basicstyle=\ttfamily,       % taille de la police du code
+keywordstyle=\ttfamily\color{myblue} ,    %couleur des mots-cl?s
+columns=flexible,
+upquote=true,
+numbers=left,                   % placer le num?ro de chaque ligne ? gauche (left) 
+numberstyle=\normalsize,        % taille de la police des num?ros
+numbersep=7pt,                  % distance entre le code et sa num?rotation
+backgroundcolor=\color{white},  % couleur du fond Possibilit? d'utilisation du package color 
+frame=single,										%ajout d'une bordure autour du code						
+commentstyle=\color{mygreen},    % comment style
+numberstyle=\tiny\color{shade}, % the style that is used for the line-numbers
+rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+stringstyle=\color{purple},     % string literal style
+title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%On peut aussi utiliser la commande :
+%\lstinputlisting[language=Python]{source_filename.py}
+%pour inclure directement un fichier source dans le pdf
+
+\usepackage{algorithm2e} %�crire du pseudo-code
+\usepackage{lipsum}
+\usepackage{hyperref} %cr�er des liens PDF 
+\hypersetup{
+    colorlinks = true,
+    linkcolor=black,
+    }
+%----------------------------------------------------------
+%					Page setting packages
+%----------------------------------------------------------
+
+\usepackage{titlesec}
+\usepackage{bookmark}
+%\titleformat{\chapter}[hang]{\bfseries}{\large\thechapter}{10pt}{\LARGE}
+\titleformat{\chapter}[hang]{\bf\Large}{\thechapter}{2pc}{}
+\titleformat{\section}[hang]{\bf\large}{\thesection}{2pc}{}
+\usepackage[top=1.5cm, bottom=3.5cm,right=2cm,left=2cm]{geometry}
+% \geometry
+\usepackage{setspace} %pour regler l'interligne
+\usepackage{textcomp}
+%\setlength{\parindent}{1ex}%set indent
+\setlength{\parskip}{2ex} %Space between paragraphs
+\usepackage{tabularx} %enables complicated arrays
+\usepackage{fancyhdr} %set pages styles with a lot more options
+\pagestyle{fancy}
+%\usepackage[square]{natbib}
+%renomming \listoffgures and \listoftables  names to something which sound better in French
+%\addto\captionsfrench{%
+%  \renewcommand{\listfigurename}{Listes des figures}%
+%  \renewcommand{\listtablename}{Liste des tableaux}%
+%  \renewcommand{\contentsname}{Sommaire}%
+%}
+\renewcommand{\contentsname}{Sommaire}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%															Begin Document
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%Page de garde de ouf^^
+
+\input{Titlepage/Titlepage}
+%--------------------------------------
+% ce que tu veux mettre dans les  
+% en-têtes et pieds de pages
+%--------------------------------------
+\renewcommand{\headheight}{5pc} % Espace entre l'en-t�te et le haut de la feuille
+\renewcommand{\headrulewidth}{1ex} % Trait en haut
+\renewcommand{\headsep}{2pc}
+\renewcommand{\footrulewidth}{1ex} % Trait en bas
+
+% en-t�te
+\fancyhead[L]{\includegraphics[width=0.1\textwidth]{logo-efrei-paris.jpg}} %coin gauche 
+\fancyhead[C]{} %centre
+\fancyhead[R]{Page \thepage } %� droite
+%pied de pages
+\fancyfoot[L]{Afahd \textsc{Ali} - SE}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+
+\tableofcontents 
+\newpage
+\input{Intro/Intro}
+\input{Talent-Program/Talent-Program}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%								New Chapter																			 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% new section
+
+%--------------------------------------------------------new subsection
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% new section
+
+\end{document}
